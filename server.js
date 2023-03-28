@@ -21,10 +21,20 @@ app.get("/",(req,res)=>{
 })
 
 app.post("/",(req,res)=>{
-    if(!req.files)
+    if(!req.files){
       return res.status(400).send("何も画像ファイルは入っていません。");
-    else
+    }
       console.log(req.files);
+
+    let imageFile = req.files.imageFile;
+    let uploadPath = __dirname + "/upload/" + imageFile.name;
+
+    //サーバーに画像ファイルを置く場所を指定
+    imageFile.mv(uploadPath,(err)=>{
+        if(err) return res.status(500).send(err);
+        res.send("画像のアップロードに成功しました！！！");
+    })
+
 })
 
 app.listen(PORT,()=>{
