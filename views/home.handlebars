@@ -1,1 +1,12 @@
-<h1>Test Template Engine</h1>
+{{!-- <h1>Test Template Engine</h1> --}}
+
+<form action="/" method="POST" enctype="multipart/form-data">
+  <h3>画像をアップロードする</h3>
+  <input type="file" name="imageFile" accept="image/*"/>
+  <input type="submit"/>
+</form>
+
+<div>
+    <p>↓に保存された画像が出力されます</p>
+    <img src="00.jpg" alt="images"/>
+</div>
