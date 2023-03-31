@@ -7,6 +7,9 @@
 </form>
 
 <div>
+    {{#each rows}}
     <p>↓に保存された画像が出力されます</p>
-    <img src="00.jpg" alt="images"/>
+    <img src={{this.imageName}} alt="images"/>
+    {{!-- <p>{{this.imageName}}</p> --}}
+    {{/each}}
 </div>
